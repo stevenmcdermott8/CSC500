@@ -83,7 +83,7 @@ def main():
 
     ## print the days to wait plus the hour the alarm will go off
     print('\nOn a 24 hour clock, the alarm will go off in {} day(s) at {}'.format(alarm_days, next_alarm_hour))
-    print('On a 12 hour clock, The alarm will go off in {} days(s) as {} {}'.format(alarm_days, next_12_hour_clock_time, am_or_pm))
+    print('On a 12 hour clock, The alarm will go off in {} day(s) as {} {}'.format(alarm_days, next_12_hour_clock_time, am_or_pm))
 
 ## main function to run program
 if __name__ == "__main__":
