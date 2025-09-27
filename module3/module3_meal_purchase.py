@@ -19,7 +19,7 @@ def get_cost():
         ## begin try block to handle potential exception
         try:
             # gather data from user for total cost for food
-            food_cost = float(input('Enter the cost of the food:'))
+            food_cost = float(input('Enter the cost of the food: '))
             if food_cost < 0:
                 print("Food cost cannot be negative. Please enter a valid amount.")
                 continue
