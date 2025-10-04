@@ -16,6 +16,15 @@ class ItemToPurchase:
             cost = total_cost
         ))
 
+
+## wrap gathering input name in function to allow future validation or formatting
+def get_input_name():
+    ## request item name from user
+    name = input('Enter the item name:\n')
+    ## return name (could add validation here if needed)
+    return name
+
+
 ## wrap gathering input price in function to add error handling to gather valid values
 def get_input_price():
      while True:
@@ -49,14 +58,14 @@ def main():
     ## Gather details for first item
     print("Item 1")
     item1 = ItemToPurchase()
-    item1.item_name = input('Enter the item name:\n')
+    item1.item_name = get_input_name()
     item1.item_price = get_input_price()
     item1.item_quantity = get_input_quantity()
 
     ## gather details for second item
-    print("Item 2")
+    print("\nItem 2")
     item2 = ItemToPurchase()
-    item2.item_name = input('\nEnter the item name:\n')
+    item2.item_name = get_input_name()
     item2.item_price = get_input_price()
     item2.item_quantity = get_input_quantity()
 
@@ -66,7 +75,7 @@ def main():
 
     ## print the final output including each item and the total cost
     ## simulating an itemized receipt
-    print('\nTOTAL COST\n')
+    print('\n\nTOTAL COST\n')
     item1.print_item_cost()
     item2.print_item_cost()
     print("\nTotal: ${:.2f}".format(total_cost))
