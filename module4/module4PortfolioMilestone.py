@@ -9,11 +9,20 @@ class ItemToPurchase:
     def print_item_cost(self):
         ## calculate the total cost for the item
         total_cost = self.item_price * self.item_quantity
-        print('{name} {quantity} @ ${price:.2f} = ${cost:.2f}'.format(
+
+        ## format price and cost: show without decimals if whole number
+        formatted_price = (
+            f"${int(self.item_price)}" if self.item_price.is_integer() else f"${self.item_price:.2f}"
+        )
+        formatted_cost = (
+            f"${int(total_cost)}" if total_cost.is_integer() else f"${total_cost:.2f}"
+        )
+
+        print('{name} {quantity} @ {price} = {cost}'.format(
             name = self.item_name, 
             quantity = self.item_quantity, 
-            price = self.item_price, 
-            cost = total_cost
+            price = formatted_price, 
+            cost = formatted_cost
         ))
 
 ## wrap gathering input name in function with validation
@@ -75,12 +84,16 @@ def main():
     ## to get total cost
     total_cost = item1.item_price * item1.item_quantity + item2.item_price * item2.item_quantity
 
+    ## print total cost with formatting
+    formatted_total = (
+        f"${int(total_cost)}" if total_cost.is_integer() else f"${total_cost:.2f}"
+)
     ## print the final output including each item and the total cost
     ## simulating an itemized receipt
     print('\n\nTOTAL COST\n')
     item1.print_item_cost()
     item2.print_item_cost()
-    print("\nTotal: ${:.2f}".format(total_cost))
+    print("\nTotal: {}".format(formatted_total))
 
 ## run main function if script is executed directly
 if __name__ == "__main__":
