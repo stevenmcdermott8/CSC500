@@ -16,14 +16,16 @@ class ItemToPurchase:
             cost = total_cost
         ))
 
-
-## wrap gathering input name in function to allow future validation or formatting
+## wrap gathering input name in function with validation
 def get_input_name():
-    ## request item name from user
-    name = input('Enter the item name:\n')
-    ## return name (could add validation here if needed)
-    return name
-
+    while True:
+        ## request item name from user
+        name = input('Enter the item name:\n').strip()
+        ## validate that name is not empty
+        if name:
+            return name
+        else:
+            print("Invalid input. Item name cannot be empty. Please enter a valid name.")
 
 ## wrap gathering input price in function to add error handling to gather valid values
 def get_input_price():
