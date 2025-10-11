@@ -53,7 +53,7 @@ def main():
     """
     books = get_books_purchases()  # Get user input
     points = calculate_points(books)  # Calculate points based on input
-    print(f"You have earned {points} point(s) this month.")  # Display result
+    print(f"You have earned {points} points this month.")  # Display result
 
 # Entry point of the program
 if __name__ == "__main__":
