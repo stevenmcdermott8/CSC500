@@ -120,7 +120,7 @@ def print_menu(cart: ShoppingCart):
 
         # Remove an item from the cart
         elif choice == 'r':
-            item_name = input("Enter name of item to remove: ")
+            item_name = get_input_name()
             cart.remove_item(item_name)
 
         # Modify the description of an existing item
